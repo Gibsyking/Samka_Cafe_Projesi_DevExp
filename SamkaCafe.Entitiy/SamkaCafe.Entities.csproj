@@ -67,6 +67,7 @@
     <Compile Include="DAL\MasaHareketleriDAL.cs" />
     <Compile Include="DAL\MasalarDAL.cs" />
     <Compile Include="DAL\MenuDAL.cs" />
+    <Compile Include="DAL\MusterilerDAL.cs" />
     <Compile Include="DAL\OdemeHareketleriDAL.cs" />
     <Compile Include="DAL\RollerDAL.cs" />
     <Compile Include="DAL\SatislarDAL.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Mapping\MasaHareketleriMap.cs" />
     <Compile Include="Mapping\MasalarMap.cs" />
     <Compile Include="Mapping\MenuMap.cs" />
+    <Compile Include="Mapping\MusterilerMap.cs" />
     <Compile Include="Mapping\OdemeHareketleriMap.cs" />
     <Compile Include="Mapping\RollerMap.cs" />
     <Compile Include="Mapping\SatislarMap.cs" />
@@ -93,8 +95,10 @@
     <Compile Include="Models\MasaHareketleri.cs" />
     <Compile Include="Models\Masalar.cs" />
     <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Musteriler.cs" />
     <Compile Include="Models\OdemeHareketleri.cs" />
     <Compile Include="Models\Roller.cs" />
+    <Compile Include="Models\SatisKodu.cs" />
     <Compile Include="Models\Satislar.cs" />
     <Compile Include="Models\Urun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Validations\MasaHareketleriValidator.cs" />
     <Compile Include="Validations\MasalarValidator.cs" />
     <Compile Include="Validations\MenuValidator.cs" />
+    <Compile Include="Validations\MusterilerValidator.cs" />
     <Compile Include="Validations\OdemeHareketleriValidator.cs" />
     <Compile Include="Validations\RollerValidator.cs" />
     <Compile Include="Validations\SatislarValidator.cs" />
@@ -114,6 +119,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.KullaniciHareketleriDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.KullanicilarDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.MasaHareketleriDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.MasalarDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.MenuDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.MusterilerDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.OdemeHareketleriDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.RollerDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.SatislarDAL.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.DAL.UrunDAL.datasource" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

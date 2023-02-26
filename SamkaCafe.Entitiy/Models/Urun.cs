@@ -16,10 +16,9 @@ namespace SamkaCafe.Entitiy.Models
         //[Key]
         public int Id { get; set; }
 
-        //  [ForeignKey("Menu")]
+        
         public int MenuId { get; set; }
-        //[Column(TypeName = "varchar")]
-        // [StringLength(20)]
+        
         public string UrunKodu { get; set; }
 
         public string UrunAdi { get; set; }
@@ -34,7 +33,8 @@ namespace SamkaCafe.Entitiy.Models
 
         public DateTime Tarih { get; set; }
         public string Resim { get; set; }
-        public Menu Menu { get; set; }
+        public virtual Menu Menu { get; set; }
+        public virtual ICollection<MasaHareketleri> MasaHareketleri { get;}
 
 
 

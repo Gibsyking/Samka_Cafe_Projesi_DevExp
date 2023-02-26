@@ -15,14 +15,14 @@ using System.Windows.Forms;
 
 namespace SamkaCafe.Winforms.Masalar
 {
-    public partial class FrmMasalar : DevExpress.XtraEditors.XtraForm
+    public partial class FrmMasaAyarlarİ : DevExpress.XtraEditors.XtraForm
     {
         CafeContext context = new CafeContext(); //ENTİTİY BAĞLANTI KATMANI
         MasalarDAL masalarDAL = new MasalarDAL();    // BAĞLANILACAK TABLO VE YAPILACAK İŞLEM İÇİ ÇAĞRILAN METOT.
 
 
 
-        public FrmMasalar()
+        public FrmMasaAyarlarİ()
         {
             InitializeComponent();
             listele();

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions; // LİNQ KÜTÜPHANESİ İÇİN KULLANILIR
-
+using SamkaCafe.Entitiy.Models;
 
 namespace SamkaCafe.Entitiy.Interfaces
 {
@@ -18,5 +18,7 @@ namespace SamkaCafe.Entitiy.Interfaces
         bool AddOrUpdate(TContex contex, TEntity entity); // EKLEME VE GÜNCELLEME İÇİN KULLANILAN PARAMETRE.
         void Delete(TContex contex, Expression<Func<TEntity, bool>> filter); // SİLME İÇİN KULLANILAN PARAMETRE
         void Save(TContex contex); // KAYDET İÇİN KULLANILAN PARAMETRE.
+        void KullaniciHareketleriDAL(CafeContext context, KullaniciHareketleri kullaniciHareketleri, string aciklama);
+        
     }
 }

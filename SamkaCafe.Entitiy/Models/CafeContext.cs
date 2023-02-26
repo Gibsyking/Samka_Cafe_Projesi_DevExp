@@ -24,6 +24,8 @@ namespace SamkaCafe.Entitiy.Models
         public DbSet<Roller> Rollers { get; set; }
         public DbSet<Satislar> Satislar  { get; set;}
         public DbSet<OdemeHareketleri> OdemeHareketleri { get; set; }
+        public DbSet<SatisKodu> SatisKodu { get; set; }
+        public DbSet<Musteriler> Musteriler { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -36,6 +38,7 @@ namespace SamkaCafe.Entitiy.Models
             modelBuilder.Configurations.Add(new RollerMap());
             modelBuilder.Configurations.Add(new SatislarMap());
             modelBuilder.Configurations.Add(new UrunMap());
+            modelBuilder.Configurations.Add(new MusterilerMap());
         }
     }
 }

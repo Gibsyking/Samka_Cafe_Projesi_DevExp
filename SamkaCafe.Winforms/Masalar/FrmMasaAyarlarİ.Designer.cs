@@ -1,6 +1,6 @@
 ﻿namespace SamkaCafe.Winforms.Masalar
 {
-    partial class FrmMasalar
+    partial class FrmMasaAyarlarİ
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasalar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMasaAyarlarİ));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnRezervDegistir = new DevExpress.XtraEditors.SimpleButton();
             this.btnDurumDeğiştir = new DevExpress.XtraEditors.SimpleButton();
@@ -161,7 +161,7 @@
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(1193, 35);
             this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Masalar";
+            this.labelControl1.Text = "Masa Ayarları";
             // 
             // gridControl1
             // 
@@ -276,7 +276,7 @@
             this.colmasaHareketleri.FieldName = "masaHareketleri";
             this.colmasaHareketleri.Name = "colmasaHareketleri";
             // 
-            // FrmMasalar
+            // FrmMasaAyarlarİ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -284,9 +284,9 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.labelControl1);
-            this.Name = "FrmMasalar";
+            this.Name = "FrmMasaAyarlarİ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Masalar";
+            this.Text = "Masalar Ayarları";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

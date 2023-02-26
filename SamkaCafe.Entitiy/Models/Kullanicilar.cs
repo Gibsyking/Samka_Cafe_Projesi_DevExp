@@ -33,6 +33,7 @@ namespace SamkaCafe.Entitiy.Models
         public bool AktifMi { get; set; }
         public string HatirlatmaSorusu { get; set; }
         public string Cevap { get; set; }
-        public ICollection<KullaniciHareketleri> KullaniciHareketleri { get; set; }
+        public virtual ICollection<KullaniciHareketleri> KullaniciHareketleri { get; set; }
+        public virtual ICollection<Masalar>Masalar { get; set; }
     }
 }

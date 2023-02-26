@@ -10,9 +10,19 @@ using System.Threading.Tasks;
 
 namespace SamkaCafe.Entitiy.DAL
 {
-    public class KullaniciHareketleriDAL: EntityRepostoryBase<CafeContext, KullaniciHareketleri,KullaniciHareketleriValidator>
+    public class KullaniciHareketleriDAL : EntityRepostoryBase<CafeContext, KullaniciHareketleri, KullaniciHareketleriValidator>
     {
-
+        // public static int kulllaniciId { get; set; }
+        public void KullaniciHareketleriEKLE(CafeContext context, KullaniciHareketleri kullaniciHareketleri, string aciklama)
+        {
+            KullaniciHareketleriDAL kullaniciHareketleriDAL = new KullaniciHareketleriDAL();
+            kullaniciHareketleri.Tarih = DateTime.Now;
+            kullaniciHareketleri.Aciklama = aciklama;
+            if (kullaniciHareketleriDAL.AddOrUpdate(context, kullaniciHareketleri))
+            {
+                kullaniciHareketleriDAL.Save(context);
+            }
+        }
     }
-    
+
 }

@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using SamkaCafe.Entitiy.DAL;
+using SamkaCafe.Entitiy.Interfaces;
+using SamkaCafe.Entitiy.Mapping;
 using SamkaCafe.Entitiy.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,8 @@ namespace SamkaCafe.Winforms.Kullanicilar
 
         CafeContext context=new CafeContext();
         KullanicilarDAL kullanicilarDAL= new KullanicilarDAL();
+        KullaniciHareketleri kullaniciHareketleri = new KullaniciHareketleri();
+        KullaniciHareketleriDAL kullaniciHareketleriDAL = new KullaniciHareketleriDAL();
 
         public FrmParolamiUnuttum()
         {
@@ -44,6 +48,10 @@ namespace SamkaCafe.Winforms.Kullanicilar
                         if (kullanicilarDAL.AddOrUpdate(context, entitiy))
                         {
                             kullanicilarDAL.Save(context);
+                            kullaniciHareketleri.KullaniciId = entitiy.Id; //
+                            string aciklama = entitiy.KullaniciAdi + " Kullanıcı ismi ile parolası yenilendi";//
+
+                            kullaniciHareketleriDAL.KullaniciHareketleriEKLE(context, kullaniciHareketleri, aciklama); // KULLAICI HAREKETLERİNİ EKLER SİSTEME KİMİN NE ZAMAN GİRİŞ YAPTIĞI GÖRÜNÜLÜR.
                             this.Close();
                             XtraMessageBox.Show("Parola Başarı ile değişti");
                         }

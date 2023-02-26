@@ -1,20 +1,26 @@
 ﻿using SamkaCafe.Entitiy.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SamkaCafe.Entitiy.Models
 {
-    // [Table("KullaniciHareketleri")]
-    public class KullaniciHareketleri: IEntity
+    public class Musteriler : IEntity
     {
         public int Id { get; set; }
-        public int KullaniciId { get; set; }
+
+        public string AdiSoyadi { get; set; }
+
+        public string Telefon { get; set; }
+
+        public string Adres { get; set; }
+        public string Email { get; set; }
         public string Aciklama { get; set; }
         public DateTime Tarih { get; set; }
-        public virtual Kullanicilar Kullanicilar { get; set; }
+
+        public virtual ICollection<Satislar> Satislar { get; set; }
+
     }
 }

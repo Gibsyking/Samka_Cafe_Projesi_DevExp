@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using SamkaCafe.Entitiy.DAL;
 using SamkaCafe.Entitiy.Models;
 using SamkaCafe.Winforms.AnaMenu;
 using System;
@@ -18,9 +19,11 @@ namespace SamkaCafe.Winforms.Kullanicilar
         bool giris;
 
         CafeContext context = new CafeContext();
+        KullaniciHareketleriDAL kullaniciHareketleriDAL = new KullaniciHareketleriDAL();
+        KullaniciHareketleri entity = new KullaniciHareketleri();
 
         // BENİ HATIRLA TRUE OLDUĞUNDA BİLGİLERİ KAYDET..
-       void bilgikaydet()
+        void bilgikaydet()
         {
             if (checkBeniHatirla.Checked)
             {
@@ -31,12 +34,12 @@ namespace SamkaCafe.Winforms.Kullanicilar
             }
             else
             {
-                Properties.Settings.Default.KullaniciAdi =null;
+                Properties.Settings.Default.KullaniciAdi = null;
                 Properties.Settings.Default.Parola = null;
                 Properties.Settings.Default.BeniHatirla = false;
                 Properties.Settings.Default.Save();
             }
-          
+
 
         }
 
@@ -45,7 +48,7 @@ namespace SamkaCafe.Winforms.Kullanicilar
         {
             if (Properties.Settings.Default.BeniHatirla == true)
             {
-                textKullaniciAdi.Text=Properties.Settings.Default.KullaniciAdi;
+                textKullaniciAdi.Text = Properties.Settings.Default.KullaniciAdi;
                 textSifre.Text = Properties.Settings.Default.Parola;
                 checkBeniHatirla.Checked = true;
                 Properties.Settings.Default.Save();
@@ -58,7 +61,7 @@ namespace SamkaCafe.Winforms.Kullanicilar
 
             }
         }
-        
+
 
 
 
@@ -80,14 +83,16 @@ namespace SamkaCafe.Winforms.Kullanicilar
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            //EĞER SQL BİLGİLER VARSA GİRİŞ YAP 
-            if (context.Kullanicilar.Any(k => k.KullaniciAdi == textKullaniciAdi.Text && k.Parola == textSifre.Text))
+            var model = context.Kullanicilar.FirstOrDefault(k => k.KullaniciAdi == textKullaniciAdi.Text && k.Parola == textSifre.Text); // SQLDEN GELEN BİLGİLER DOĞRU İSE GİRİŞ YAP
+            if (model != null)
             {
                 giris = true;
                 bilgikaydet();
+                entity.KullaniciId = model.Id; //
+                string aciklama = model.KullaniciAdi + " Kullanıcı ismi ile sisteme giriş yapıldı";//
+
+                kullaniciHareketleriDAL.KullaniciHareketleriEKLE(context, entity, aciklama); // KULLAICI HAREKETLERİNİ EKLER SİSTEME KİMİN NE ZAMAN GİRİŞ YAPTIĞI GÖRÜNÜLÜR.
                 this.Close();
-
-
             }
 
 
@@ -99,10 +104,10 @@ namespace SamkaCafe.Winforms.Kullanicilar
 
 
         }
-        // YENİ MÜŞTERİ KAYDI
+        // YENİ MÜŞTERİ KAYDI OLUŞTURUR
         private void hyperKaydol_Click(object sender, EventArgs e)
         {
-            FrmKaydol fr=new FrmKaydol(new Entitiy.Models.Kullanicilar());
+            FrmKaydol fr = new FrmKaydol(new Entitiy.Models.Kullanicilar());
             fr.ShowDialog();
         }
 

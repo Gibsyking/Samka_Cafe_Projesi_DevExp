@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnaMenu));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.btnmasalar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnmasaayar = new DevExpress.XtraBars.BarButtonItem();
             this.btnMasaHareketleri = new DevExpress.XtraBars.BarButtonItem();
             this.btnMenu = new DevExpress.XtraBars.BarButtonItem();
             this.btnMenüHareketleri = new DevExpress.XtraBars.BarButtonItem();
@@ -43,6 +43,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnmasalarr = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,6 +54,8 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnMusteriler = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +66,7 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
-            this.btnmasalar,
+            this.btnmasaayar,
             this.btnMasaHareketleri,
             this.btnMenu,
             this.btnMenüHareketleri,
@@ -74,28 +77,28 @@
             this.btnRoller,
             this.barButtonItem2,
             this.barButtonItem3,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.btnmasalarr,
+            this.btnMusteriler});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 13;
+            this.ribbon.MaxItemId = 15;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(1006, 158);
+            this.ribbon.Size = new System.Drawing.Size(1265, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
-            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
+//            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
-            // btnmasalar
+            // btnmasaayar
             // 
-            this.btnmasalar.Caption = "MASA AYARLARI";
-            this.btnmasalar.Id = 1;
-            this.btnmasalar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnmasalar.ImageOptions.SvgImage")));
-            this.btnmasalar.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnmasalar.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnmasalar.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnmasalar.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.btnmasalar.Name = "btnmasalar";
-            this.btnmasalar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnmasalar_ItemClick);
+            this.btnmasaayar.Caption = "MASA AYARLARI";
+            this.btnmasaayar.Id = 1;
+            this.btnmasaayar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnmasaayar.ImageOptions.SvgImage")));
+            this.btnmasaayar.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnmasaayar.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.btnmasaayar.Name = "btnmasaayar";
+            this.btnmasaayar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnmasalar_ItemClick);
             // 
             // btnMasaHareketleri
             // 
@@ -194,19 +197,29 @@
             this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
+            // btnmasalarr
+            // 
+            this.btnmasalarr.Caption = "MASALAR";
+            this.btnmasalarr.Id = 13;
+            this.btnmasalarr.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnmasalarr.ImageOptions.SvgImage")));
+            this.btnmasalarr.Name = "btnmasalarr";
+            this.btnmasalarr.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnmasalarr_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Ana Menü";
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnmasalar);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnmasalarr);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnmasaayar);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnMasaHareketleri);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Masa İşlemleri";
@@ -254,7 +267,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 533);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1006, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1265, 24);
             // 
             // barButtonItem1
             // 
@@ -269,11 +282,27 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnMusteriler);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Müşteri İşlemleri";
+            // 
+            // btnMusteriler
+            // 
+            this.btnMusteriler.Caption = "Müşteriler";
+            this.btnMusteriler.Id = 14;
+            this.btnMusteriler.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.btnMusteriler.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.btnMusteriler.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMusteriler_ItemClick);
+            // 
             // FrmAnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 557);
+            this.ClientSize = new System.Drawing.Size(1265, 557);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("FrmAnaMenu.IconOptions.SvgImage")));
@@ -297,7 +326,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarButtonItem btnmasalar;
+        private DevExpress.XtraBars.BarButtonItem btnmasaayar;
         private DevExpress.XtraBars.BarButtonItem btnMasaHareketleri;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
@@ -316,5 +345,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnmasalarr;
+        private DevExpress.XtraBars.BarButtonItem btnMusteriler;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }

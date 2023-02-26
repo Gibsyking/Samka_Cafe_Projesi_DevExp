@@ -11,28 +11,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SamkaCafe.Winforms.Menuler
+namespace SamkaCafe.Winforms.Musteriler
 {
-    public partial class FrmMenüler : DevExpress.XtraEditors.XtraForm
+    public partial class FrmMusteriler : DevExpress.XtraEditors.XtraForm
     {
-        CafeContext context = new CafeContext();
-        public FrmMenüler()
+
+        CafeContext context=new CafeContext();
+        public FrmMusteriler()
         {
             InitializeComponent();
-            context.Menu.Load();
-            gridControl1.DataSource = context.Menu.Local.ToBindingList();
+            context.Musteriler.Load();
+            gridControl1.DataSource = context.Musteriler.Local.ToBindingList();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             context.SaveChanges();
             gridView1.RefreshData();
-            XtraMessageBox.Show("Menü Kaydı Yapıldı");
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Şeçili Menü Silinsin mi", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) ;
+            if (XtraMessageBox.Show("Şeçili Müşteri Silinsin mi", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) ;
             {
                 gridView1.DeleteSelectedRows();
                 context.SaveChanges();

@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using SamkaCafe.Entitiy.Interfaces;
+using SamkaCafe.Entitiy.Models;
 using SamkaCafe.Entitiy.Tools;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,11 @@ namespace SamkaCafe.Entitiy.Repository
         public TEntity GetbyFilter(TContext contex, Expression<Func<TEntity, bool>> filter)
         {
             return contex.Set<TEntity>().FirstOrDefault(filter); // FİLTREMEYE GİT
+        }
+
+        public void KullaniciHareketleriDAL(CafeContext context, KullaniciHareketleri kullaniciHareketleri, string aciklama)
+        {
+            throw new NotImplementedException();
         }
 
         public void Save(TContext contex)

@@ -18,7 +18,9 @@ namespace SamkaCafe.Entitiy.Mapping
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.SatisKodu).HasColumnType("varchar").HasMaxLength(15);
             this.Property(p => p.Aciklama).HasColumnType("varchar").HasMaxLength(300);
-            
+
+            //this.HasOptional(m => m.Musteriler).WithMany(m => m.Satislar).HasForeignKey(m => m.MusteriId);
+            //this.HasRequired(x => x.Musteriler).WithMany(x => x.Satislar).HasForeignKey(x => x.MusteriId);
         }
     }
 }

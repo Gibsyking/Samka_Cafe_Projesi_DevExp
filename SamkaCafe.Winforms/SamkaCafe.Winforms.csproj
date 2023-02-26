@@ -51,6 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.SVG, Version=23.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.SVG.23.1.0\lib\net40\Aspose.SVG.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -113,23 +116,41 @@
     <Compile Include="Kullanicilar\FrmSifremiUnuttum.Designer.cs">
       <DependentUpon>FrmSifremiUnuttum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masalar\FrmMasaDurumlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masalar\FrmMasaDurumlari.Designer.cs">
+      <DependentUpon>FrmMasaDurumlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Masalar\FrmMasaKaydet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Masalar\FrmMasaKaydet.Designer.cs">
       <DependentUpon>FrmMasaKaydet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Masalar\FrmMasalar.cs">
+    <Compile Include="Masalar\FrmMasaAyarlarİ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Masalar\FrmMasalar.Designer.cs">
-      <DependentUpon>FrmMasalar.cs</DependentUpon>
+    <Compile Include="Masalar\FrmMasaAyarlarİ.Designer.cs">
+      <DependentUpon>FrmMasaAyarlarİ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masalar\frmMasaSiparisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masalar\frmMasaSiparisleri.Designer.cs">
+      <DependentUpon>frmMasaSiparisleri.cs</DependentUpon>
     </Compile>
     <Compile Include="Menuler\FrmMenüler.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menuler\FrmMenüler.Designer.cs">
       <DependentUpon>FrmMenüler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musteriler\FrmMusteriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Musteriler\FrmMusteriler.Designer.cs">
+      <DependentUpon>FrmMusteriler.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,14 +178,23 @@
     <EmbeddedResource Include="Kullanicilar\FrmSifremiUnuttum.resx">
       <DependentUpon>FrmSifremiUnuttum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Masalar\FrmMasaDurumlari.resx">
+      <DependentUpon>FrmMasaDurumlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Masalar\FrmMasaKaydet.resx">
       <DependentUpon>FrmMasaKaydet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Masalar\FrmMasalar.resx">
-      <DependentUpon>FrmMasalar.cs</DependentUpon>
+    <EmbeddedResource Include="Masalar\FrmMasaAyarlarİ.resx">
+      <DependentUpon>FrmMasaAyarlarİ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masalar\frmMasaSiparisleri.resx">
+      <DependentUpon>frmMasaSiparisleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menuler\FrmMenüler.resx">
       <DependentUpon>FrmMenüler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Musteriler\FrmMusteriler.resx">
+      <DependentUpon>FrmMusteriler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -189,8 +219,10 @@
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.MasaHareketleri.datasource" />
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.Masalar.datasource" />
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.Menu.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.Musteriler.datasource" />
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.OdemeHareketleri.datasource" />
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.Roller.datasource" />
+    <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.SatisKodu.datasource" />
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.Satislar.datasource" />
     <None Include="Properties\DataSources\SamkaCafe.Entitiy.Models.Urun.datasource" />
     <None Include="Properties\Settings.settings">
@@ -226,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Image\" />
+    <Folder Include="WinTools\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yeni_calisma.png" />

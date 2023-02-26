@@ -17,9 +17,10 @@ namespace SamkaCafe.Entitiy.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.MasaAdi).HasColumnType("varchar").HasMaxLength(15);
+            this.Property(p => p.SatisKodu).HasColumnType("varchar").HasMaxLength(20);
             this.Property(p => p.Aciklama).HasColumnType("varchar").HasMaxLength(300);
             this.Property(p => p.EklenmeTarihi).HasColumnType("Date");
-        
+            this.HasOptional(m => m.Kullanicilar).WithMany(m => m.Masalar).HasForeignKey(m => m.KullaniciId);
         }
     }
 }

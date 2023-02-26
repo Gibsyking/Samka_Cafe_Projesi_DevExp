@@ -20,6 +20,8 @@ namespace SamkaCafe.Winforms.Kullanicilar
         CafeContext context = new CafeContext();
         KullanicilarDAL kullanicilarDAL = new KullanicilarDAL();
         Entitiy.Models.Kullanicilar _entity;
+        KullaniciHareketleri kullaniciHareketleri = new KullaniciHareketleri();
+        KullaniciHareketleriDAL kullaniciHareketleriDAL = new KullaniciHareketleriDAL();
 
         public FrmKaydol(Entitiy.Models.Kullanicilar entity)
         {
@@ -49,12 +51,18 @@ namespace SamkaCafe.Winforms.Kullanicilar
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             //SQL VERİLERİ GÖNDERMEK İÇİN ADDORUPDATE İLE YUKARIDA TANIMLANAN METOTLAR GÖNDERİLİR.
-            _entity.KayitTarihi = DateTime.Now;
+            
             if (textParola.Text == textParolaTekrar.Text)
             {
+                _entity.KayitTarihi = DateTime.Now;
+
                 if (kullanicilarDAL.AddOrUpdate(context, _entity))
                 {
                     kullanicilarDAL.Save(context);
+                    var model = context.Kullanicilar.Max(k => k.Id);
+                    kullaniciHareketleri.KullaniciId = model;
+                    string aciklama = "Yeni Kullanıcı Eklendi";
+                    kullaniciHareketleriDAL.KullaniciHareketleriEKLE(context,kullaniciHareketleri,aciklama);
 
                     this.Close();
                 }
