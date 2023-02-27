@@ -33,9 +33,9 @@
             this.grouphesaplamalar = new DevExpress.XtraEditors.GroupControl();
             this.btnbtnyenile = new DevExpress.XtraEditors.SimpleButton();
             this.btnsiparis = new DevExpress.XtraEditors.SimpleButton();
+            this.btnrezerve = new DevExpress.XtraEditors.SimpleButton();
             this.btnmasaac = new DevExpress.XtraEditors.SimpleButton();
             this.btnkapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnrezerve = new DevExpress.XtraEditors.SimpleButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.grouphesaplamalar)).BeginInit();
             this.grouphesaplamalar.SuspendLayout();
@@ -74,7 +74,7 @@
             this.btnbtnyenile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnbtnyenile.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btnbtnyenile.Appearance.Options.UseFont = true;
-            this.btnbtnyenile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRezervDegistir.ImageOptions.SvgImage")));
+            this.btnbtnyenile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnbtnyenile.ImageOptions.SvgImage")));
             this.btnbtnyenile.Location = new System.Drawing.Point(957, 28);
             this.btnbtnyenile.Name = "btnbtnyenile";
             this.btnbtnyenile.Size = new System.Drawing.Size(104, 66);
@@ -87,37 +87,13 @@
             this.btnsiparis.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btnsiparis.Appearance.Options.UseFont = true;
             this.btnsiparis.Enabled = false;
-            this.btnsiparis.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnyenile.ImageOptions.SvgImage")));
+            this.btnsiparis.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnsiparis.ImageOptions.SvgImage")));
             this.btnsiparis.Location = new System.Drawing.Point(737, 28);
             this.btnsiparis.Name = "btnsiparis";
             this.btnsiparis.Size = new System.Drawing.Size(104, 66);
             this.btnsiparis.TabIndex = 5;
             this.btnsiparis.Text = "SİPARİŞ";
-            // 
-            // btnmasaac
-            // 
-            this.btnmasaac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnmasaac.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btnmasaac.Appearance.Options.UseFont = true;
-            this.btnmasaac.Enabled = false;
-            this.btnmasaac.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnkaydet.ImageOptions.SvgImage")));
-            this.btnmasaac.Location = new System.Drawing.Point(627, 28);
-            this.btnmasaac.Name = "btnmasaac";
-            this.btnmasaac.Size = new System.Drawing.Size(104, 66);
-            this.btnmasaac.TabIndex = 0;
-            this.btnmasaac.Text = "MASA AÇ";
-            // 
-            // btnkapat
-            // 
-            this.btnkapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnkapat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btnkapat.Appearance.Options.UseFont = true;
-            this.btnkapat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage1")));
-            this.btnkapat.Location = new System.Drawing.Point(1067, 28);
-            this.btnkapat.Name = "btnkapat";
-            this.btnkapat.Size = new System.Drawing.Size(104, 66);
-            this.btnkapat.TabIndex = 2;
-            this.btnkapat.Text = "KAPAT";
+            this.btnsiparis.Click += new System.EventHandler(this.btnsiparis_Click);
             // 
             // btnrezerve
             // 
@@ -125,12 +101,39 @@
             this.btnrezerve.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btnrezerve.Appearance.Options.UseFont = true;
             this.btnrezerve.Enabled = false;
-            this.btnrezerve.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnrezerve.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnrezerve.ImageOptions.SvgImage")));
             this.btnrezerve.Location = new System.Drawing.Point(847, 28);
             this.btnrezerve.Name = "btnrezerve";
             this.btnrezerve.Size = new System.Drawing.Size(104, 66);
             this.btnrezerve.TabIndex = 0;
             this.btnrezerve.Text = "REZERVE";
+            this.btnrezerve.Click += new System.EventHandler(this.btnrezerve_Click);
+            // 
+            // btnmasaac
+            // 
+            this.btnmasaac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmasaac.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btnmasaac.Appearance.Options.UseFont = true;
+            this.btnmasaac.Enabled = false;
+            this.btnmasaac.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnmasaac.ImageOptions.SvgImage")));
+            this.btnmasaac.Location = new System.Drawing.Point(627, 28);
+            this.btnmasaac.Name = "btnmasaac";
+            this.btnmasaac.Size = new System.Drawing.Size(104, 66);
+            this.btnmasaac.TabIndex = 0;
+            this.btnmasaac.Text = "MASA AÇ";
+            this.btnmasaac.Click += new System.EventHandler(this.btnmasaac_Click);
+            // 
+            // btnkapat
+            // 
+            this.btnkapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnkapat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btnkapat.Appearance.Options.UseFont = true;
+            this.btnkapat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnkapat.ImageOptions.SvgImage")));
+            this.btnkapat.Location = new System.Drawing.Point(1067, 28);
+            this.btnkapat.Name = "btnkapat";
+            this.btnkapat.Size = new System.Drawing.Size(104, 66);
+            this.btnkapat.TabIndex = 2;
+            this.btnkapat.Text = "KAPAT";
             // 
             // flowLayoutPanel1
             // 

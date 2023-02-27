@@ -17,7 +17,7 @@ namespace SamkaCafe.Entitiy.Mapping
             this.ToTable("Musteriler");
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.Property(p => p.AdiSoyadi).HasColumnType("varchar").HasMaxLength(15);
+            this.Property(p => p.AdiSoyadi).HasColumnType("varchar").HasMaxLength(25);
             this.Property(p => p.Telefon).HasColumnType("varchar").HasMaxLength(25);
             this.Property(p => p.Adres).HasColumnType("varchar").HasMaxLength(200);
             this.Property(p => p.Email).HasColumnType("varchar").HasMaxLength(150);

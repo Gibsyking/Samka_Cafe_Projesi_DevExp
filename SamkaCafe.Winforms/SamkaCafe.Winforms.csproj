@@ -134,6 +134,12 @@
     <Compile Include="Masalar\FrmMasaAyarlarİ.Designer.cs">
       <DependentUpon>FrmMasaAyarlarİ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masalar\FrmMasaRezerv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masalar\FrmMasaRezerv.Designer.cs">
+      <DependentUpon>FrmMasaRezerv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Masalar\frmMasaSiparisleri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,7 @@
     <Compile Include="Urunler\FrmUrunler.Designer.cs">
       <DependentUpon>FrmUrunler.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinTools\Kullaniciayarlari.cs" />
     <EmbeddedResource Include="AnaMenu\FrmAnaMenu.resx">
       <DependentUpon>FrmAnaMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masalar\FrmMasaAyarlarİ.resx">
       <DependentUpon>FrmMasaAyarlarİ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masalar\FrmMasaRezerv.resx">
+      <DependentUpon>FrmMasaRezerv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masalar\frmMasaSiparisleri.resx">
       <DependentUpon>frmMasaSiparisleri.cs</DependentUpon>
@@ -258,7 +268,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Image\" />
-    <Folder Include="WinTools\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yeni_calisma.png" />

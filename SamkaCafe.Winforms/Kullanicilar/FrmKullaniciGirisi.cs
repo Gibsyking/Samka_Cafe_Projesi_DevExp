@@ -2,6 +2,7 @@
 using SamkaCafe.Entitiy.DAL;
 using SamkaCafe.Entitiy.Models;
 using SamkaCafe.Winforms.AnaMenu;
+using SamkaCafe.Winforms.WinTools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,6 +89,8 @@ namespace SamkaCafe.Winforms.Kullanicilar
             {
                 giris = true;
                 bilgikaydet();
+                Kullaniciayarlari.kullaniciId = model.Id;
+
                 entity.KullaniciId = model.Id; //
                 string aciklama = model.KullaniciAdi + " Kullanıcı ismi ile sisteme giriş yapıldı";//
 

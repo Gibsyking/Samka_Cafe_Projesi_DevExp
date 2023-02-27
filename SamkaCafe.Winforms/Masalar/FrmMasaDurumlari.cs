@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SamkaCafe.Entitiy.Models;
 using System.Runtime.Remoting.Contexts;
+using SamkaCafe.Entitiy.DAL;
 
 namespace SamkaCafe.Winforms.Masalar
 {
@@ -19,11 +20,17 @@ namespace SamkaCafe.Winforms.Masalar
 
 
         CafeContext context = new CafeContext();
-        CheckButton btn;
+        CheckButton btnsender;
+        SatisKodu ModelSatiskodu;
+        string _satiskodu;
+        int _masaId;
+        Entitiy.Models.Masalar masalar;
+        MasalarDAL masalarDAL = new MasalarDAL();
         public FrmMasaDurumlari()
         {
             // DİNAMİK MASALARDA TANIMLANAN KATMANI ÇEKMEK İÇİN KULLANILAN METOT.
             InitializeComponent();
+            ModelSatiskodu = context.SatisKodu.First();
             MasalariGetir();
         }
         private Color FromRgbExample()
@@ -44,16 +51,18 @@ namespace SamkaCafe.Winforms.Masalar
         }
         public void MasalariGetir()
         {
-
+            flowLayoutPanel1.Controls.Clear();
+            context=new CafeContext();
             // MASALARI GETİRMEK VE İÇERİSİNDE LİSTELEMEK İÇİN KULLANILAN METOT.
             //floyut PANEL  İÇERİSİNE BUTTONLARI MASA TARZI EKLEME..
             var model = context.Masalar.ToList();
 
             for (int i = 0; i < model.Count; i++)
             {
-                btn = new CheckButton();
+                var btn = new CheckButton();
                 btn.Text = model[i].MasaAdi;
                 btn.Name = model[i].Id.ToString();
+                btn.Tag = model[i].SatisKodu;
                 btn.Height = 100;
                 btn.Width = 80;
                 flowLayoutPanel1.Controls.Add(btn);
@@ -87,21 +96,59 @@ namespace SamkaCafe.Winforms.Masalar
         }
         private void Btn_Click(object sender, EventArgs e)
         {
-            CheckButton tiklananbtn = sender as CheckButton; // BOTUNLARA AKTİF PASİF REZERV GİBİ DURUMLARI KULLANILAN YÖNTEM..
+            btnsender = sender as CheckButton; // BOTUNLARA AKTİF PASİF REZERV GİBİ DURUMLARI KULLANILAN YÖNTEM..
+            _masaId = Convert.ToInt32(btnsender.Name);//MASA İSMİNİ GÖNDERME
+
             DurumlariYenile();
-            if (tiklananbtn.Appearance.BackColor==Color.Gold) // DURUMA GÖRE TIKLANINCA AÇILACAK BUTTONLARIN ŞEÇİMİ..
+            if (btnsender.Appearance.BackColor == Color.Gold) // DURUMA GÖRE TIKLANINCA AÇILACAK BUTTONLARIN ŞEÇİMİ..
             {
                 btnmasaac.Enabled = true;
             }
-            else if (tiklananbtn.Appearance.BackColor == Color.FromArgb(44, 44, 84))// DURUMA GÖRE TIKLANINCA AÇILACAK BUTTONLARIN ŞEÇİMİ..
+            else if (btnsender.Appearance.BackColor == Color.FromArgb(44, 44, 84))// DURUMA GÖRE TIKLANINCA AÇILACAK BUTTONLARIN ŞEÇİMİ..
             {
                 btnmasaac.Enabled = true;
                 btnrezerve.Enabled = true;
             }
-            else if (tiklananbtn.Appearance.BackColor == Color.FromArgb(192, 0, 0))// DURUMA GÖRE TIKLANINCA AÇILACAK BUTTONLARIN ŞEÇİMİ..
+            else if (btnsender.Appearance.BackColor == Color.FromArgb(192, 0, 0))// DURUMA GÖRE TIKLANINCA AÇILACAK BUTTONLARIN ŞEÇİMİ..
             {
                 btnsiparis.Enabled = true;
             }
+        }
+
+        private void btnsiparis_Click(object sender, EventArgs e)
+        {
+            _satiskodu = btnsender.Tag.ToString();
+            frmMasaSiparisleri fr = new frmMasaSiparisleri(_masaId, btnsender.Text);
+            fr.Show();
+        }
+
+        private void btnmasaac_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show(btnsender.Text + " Açılsın mı ? ", "Bilgi", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                masalar = masalarDAL.GetbyFilter(context, m => m.Id == _masaId);
+                masalar.SatisKodu = ModelSatiskodu.SatisTanimi + "-" + ModelSatiskodu.Sayi;
+                masalar.Durumu = true;
+                ModelSatiskodu.Sayi++;
+                masalarDAL.Save(context);
+                btnsender = null;
+                DurumlariYenile();
+                MasalariGetir();
+            }
+        }
+
+        private void btnrezerve_Click(object sender, EventArgs e)
+        {
+            FrmMasaRezerv fr = new FrmMasaRezerv(_masaId);
+            fr.ShowDialog();
+            DurumlariYenile();
+            if (fr.islemyapildi)
+            {
+
+                MasalariGetir();
+
+            }
+            btnsender = null;
         }
     }
 }
